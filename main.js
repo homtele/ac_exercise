@@ -75,6 +75,7 @@ document.querySelectorAll('#app td').forEach(cell => {
     if (event.target.tagName !== 'TD') {
       return
     }
+    document.querySelector('#computer-move-btn').style.display = 'none'
     draw(event.target, 'circle')
     isWinning(Number(event.target.dataset.index), positions.circle)
     positions.circle.push(Number(event.target.dataset.index))
@@ -86,7 +87,7 @@ document.querySelectorAll('#app td').forEach(cell => {
 })
 
 document.querySelector('#computer-move-btn').addEventListener('click', event => {
-  event.target.style.display = 'none'
+  document.querySelector('#computer-move-btn').style.display = 'none'
   const pickingNumber = getMostValuableNumber(positions.cross, positions.circle)
   const drawingPosition = document.querySelector(`#position-${pickingNumber}`)
   positions.cross.push(pickingNumber)

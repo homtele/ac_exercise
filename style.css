@@ -27,6 +27,8 @@ body {
 #app table tr td {
   height: 120px;
   width: 120px;
+  font-size: 80px;
+  font-weight: 700;
   text-align: center;
 }
 
